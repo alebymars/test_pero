@@ -23,10 +23,10 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    testImplementation('com.codeborne:selenide:6.19.1')
+    testImplementation('com.codeborne:selenide:7.3.1')
     testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
-    testImplementation('org.assertj:assertj-core:3.24.2')
-    testImplementation('org.slf4j:slf4j-simple:2.0.7')
+    testImplementation('org.assertj:assertj-core:3.25.3')
+    testImplementation('org.slf4j:slf4j-simple:2.0.13')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
