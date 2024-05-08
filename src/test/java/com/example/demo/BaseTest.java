@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
 abstract public class BaseTest {
 
     public static void setUpAll() {
@@ -23,8 +24,8 @@ abstract public class BaseTest {
         Selenide.closeWebDriver();
     }
 
-//    временно, позже нужно будет убрать
-    public void consoleLog(String info){
+    //    временно, позже нужно будет убрать
+    public void consoleLog(String info) {
         System.out.println(info);
     }
 
