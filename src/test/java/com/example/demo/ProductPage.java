@@ -12,24 +12,24 @@ public class ProductPage {
 
     private final SelenideElement
             PublicTitle = $x("//div[contains(@class, 'vkuiSimpleCell__content')]//a[string-length(text()) > 0]"),
-            ItemName = $x("//h1[@class=\'ItemName\']"),
+            ItemName = $x("//h1[@class='ItemName']"),
             ItemDescription = $x("//div[@class='ItemDescription MarketItemCard__description']//div"),
-            ItemPrice = $x("//*[@id=\'popup-sticker-market-react-container\']/div/div/div[1]/div[2]/div[2]/div[1]/div/span"),
-            ItemGalleryPlaceholder = $x("//div[@class=\'ItemGallery__placeholder\']"),
+            ItemPrice = $x("//*[@id='popup-sticker-market-react-container']/div/div/div[1]/div[2]/div[2]/div[1]/div/span"),
+            ItemGalleryPlaceholder = $x("//div[@class='ItemGallery__placeholder']"),
             WriteButton = $x("//button[.//span[text()='Написать' or text()='Contact']]"),
             SubscribeButton = $x("//button[@class='Button-module__root--enpNU MarketItemCardShopInfo__buttonToggleSubscribeGroup vkuiButton vkuiButton--size-s vkuiButton--mode-primary vkuiButton--appearance-accent vkuiButton--align-center vkuiTappable vkuiInternalTappable vkuiTappable--hasHover vkuiTappable--hasActive vkui-focus-visible']"),
             GoToStoreButton = $x("//*[@id=\"popup-sticker-market-react-container\"]/div/div/div[2]/div/div[2]/div/div[2]/a"),
-            LikeButton = $x("//button[@data-action-name=\'like\']"),
-            ShareButton = $x("//button[@data-action-name=\'share\']"),
-            CopyLinkButton = $x("//button[@data-action-name=\'copyUrl\']"),
-            BookmarkButton = $x("//button[@data-action-name=\'favorite\']"),
+            LikeButton = $x("//button[@data-action-name='like']"),
+            ShareButton = $x("//button[@data-action-name='share']"),
+            CopyLinkButton = $x("//button[@data-action-name='copyUrl']"),
+            BookmarkButton = $x("//button[@data-action-name='favorite']"),
             WishesButton = $x("//button[@data-action-name='wishlist']"),
-            MoreButton = $x("//div[@data-testid=\'actions_dd_new\']"),
-            ReportButton = $x("//li[@class=\'Dropdown__item\']"),
+            MoreButton = $x("//div[@data-testid='actions_dd_new']"),
+            ReportButton = $x("//li[@class='Dropdown__item']"),
             CloseCardButton = $x("//div[@aria-label='Закрыть' or @aria-label='Close']"),
-            SignInForm = $x("//div[@class=\'page_block VkIdSignIn\']"),
-            ShareBoxModal = $x("//div[@class=\'box_body box_no_title box_no_buttons\']"),
-            ReportBoxModal = $x("//div[@class=\'ModalBox-module__container--PhuMA vkuiInternalModalBox ReportForm\']"),
+            SignInForm = $x("//div[@class='page_block VkIdSignIn']"),
+            ShareBoxModal = $x("//div[@class='box_body box_no_title box_no_buttons']"),
+            ReportBoxModal = $x("//div[@class='ModalBox-module__container--PhuMA vkuiInternalModalBox ReportForm']"),
             CardItemModal = $x("//div[@class='wk_product_box MarketItemCard']"),
             TooltipLikesUsers = $x("//div[contains(@class, 'tt_w like_tt likes_tt_like tt_down')]");
 
@@ -137,10 +137,6 @@ public class ProductPage {
 
     public String getItemPrice() {
         return ItemPrice.text();
-    }
-
-    public String getSubscribeButton() {
-        return SubscribeButton.text();
     }
 
     public SelenideElement getReportButton() {

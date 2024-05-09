@@ -118,6 +118,7 @@ public class ProductPageTest extends BaseTest {
         try {
             Assertions.assertTrue(placeholder.exists(), "Ошибка. Плейсхолдер на странице отсутствует.");
         } catch (AssertionError e) {
+            Allure.addAttachment("Результаты:", result);
             throw e;
         }
 
@@ -325,10 +326,10 @@ public class ProductPageTest extends BaseTest {
         productPage.waitUntilTheAuthorizationFormIsLoaded();
 
 
-        String actualUrl = url().substring(0, 20);
+        String actualUrl = url();
         String expectedUrl = LOGIN_URL;
         Boolean isLinksMatch = actualUrl.contains(expectedUrl);
-        String result = "Фактический результат: " + actualUrl + "\nОжидаемый результат: " + expectedUrl + "\nСсылки совпадают: " + isLinksMatch;
+        String result = "Фактический результат: " + actualUrl.substring(0, 20) + "\nОжидаемый результат: " + expectedUrl + "\nСсылки совпадают: " + isLinksMatch;
 
         try {
             Assertions.assertEquals(true, isLinksMatch, "Ошибка. Ожидался редирект на страницу авторизации.");
@@ -374,7 +375,7 @@ public class ProductPageTest extends BaseTest {
     public void checkCardItemInThePage() {
         productPage.openWebSite(BASE_URL);
 
-        Boolean expectedUrl = true;
+        boolean expectedUrl = true;
         SelenideElement actualUrl = productPage.getCardItemModal();
 
         String result = "Фактический результат: " + actualUrl.exists() + "\nОжидаемый результат: " + expectedUrl;
@@ -398,7 +399,7 @@ public class ProductPageTest extends BaseTest {
         productPage.clickCloseCardButton();
         productPage.waitUntilTheProductCardIsHidden();
 
-        Boolean expectedUrl = true;
+        boolean expectedUrl = true;
         SelenideElement actualUrl = productPage.getCardItemModal();
 
         String result = "Фактический результат: " + actualUrl.exists() + "\nОжидаемый результат: " + expectedUrl;
@@ -422,7 +423,7 @@ public class ProductPageTest extends BaseTest {
         productPage.hoverLikeButton();
         productPage.waitUntilTheTooltipLikesUsers();
 
-        Boolean expectedTooltip = true;
+        boolean expectedTooltip = true;
         SelenideElement actualTooltip = productPage.getTooltipLikesUsers();
 
         String result = "Фактический результат: " + actualTooltip.exists() + "\nОжидаемый результат: " + expectedTooltip;
@@ -436,5 +437,4 @@ public class ProductPageTest extends BaseTest {
 
         Allure.addAttachment("Результаты:", result);
     }
-
 }

@@ -23,10 +23,4 @@ abstract public class BaseTest {
     public void tearDown() {
         Selenide.closeWebDriver();
     }
-
-    //    временно, позже нужно будет убрать
-    public void consoleLog(String info) {
-        System.out.println(info);
-    }
-
 }
